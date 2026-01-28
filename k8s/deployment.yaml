@@ -16,7 +16,7 @@ spec:
         kubernetes.io/os: linux
       containers:
       - name: conversao-temperatura
-        image: k8syns/guia-jenkins
+        image: k8syns/guia-jenkins:{{tag}}
         ports:
         - containerPort: 8080
 ---
