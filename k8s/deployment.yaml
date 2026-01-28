@@ -12,6 +12,8 @@ spec:
       labels:
         app: conversao-temperatura
     spec:
+      nodeSelector:
+        kubernetes.io/os: linux
       containers:
       - name: conversao-temperatura
         image: k8syns/guia-jenkins
