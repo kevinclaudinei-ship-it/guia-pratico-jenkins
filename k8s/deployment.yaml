@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: conversao-temperatura
-        image: fabricioveronez/live-jenkins
+        image: k8syns/guia-jenkins
         ports:
         - containerPort: 8080
 ---
@@ -26,7 +26,7 @@ spec:
   selector:
     app: conversao-temperatura
   ports:
-  - port: 80
+  - port: 8080
     targetPort: 8080
   type: LoadBalancer
 
