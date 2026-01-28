@@ -23,7 +23,7 @@ pipeline {
     
         stage ('Deploy no kubernetes') {
       steps {
-        sh 'echo "executando deploy no kubernetes..."'
+        sh 'kubectl apply -f k8s/deployment.yaml'
       }
     }      
   }
