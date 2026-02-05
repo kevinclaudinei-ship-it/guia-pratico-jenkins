@@ -40,10 +40,11 @@ spec:
     targetPort: 8080
   type: ClusterIP
 ---
+---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: conversao-temperatura-hpa
+  name: linux-conversao-temperatura-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
@@ -51,13 +52,6 @@ spec:
     name: conversao-temperatura
   minReplicas: 2
   maxReplicas: 10
-  behavior:
-    scaleDown:
-      stabilizationWindowSeconds: 300  # 5 minutos de delay (padrão)
-      policies:
-      - type: Pods
-        value: 1  # Remove no máximo 1 pod por vez
-        periodSeconds: 60  # A cada 60 segundos pode remover 1 pod
   metrics:
   - type: Resource
     resource:
